@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: inference-lineage
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_CA_CERT
+        sync: false
+      - key: APP_PASSWORD
+        sync: false
+      - key: APP_USER
+        value: map

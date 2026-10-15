@@ -1,0 +1,10 @@
+node_modules/
+.env
+*.pem
+data/papers/
+.idea/
+.openai/
+work/
+*.log
+*.sqlite
+*.db

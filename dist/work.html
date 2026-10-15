@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f0">
+  <title>工作 · Inference Lineage</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./work.css">
+</head>
+<body class="work-page">
+  <div class="library-shell">
+    <header class="library-header">
+      <a class="back-map" href="./index.html">← 返回地图</a>
+      <div class="library-heading"><span>Inference Lineage / Papers</span><h1 id="workTitle">论文库</h1></div>
+      <span id="paperSaveState" class="paper-save-state">正在载入…</span>
+    </header>
+    <div class="library-body">
+      <aside class="paper-sidebar" aria-label="论文列表">
+        <div class="paper-sidebar-head"><h2>Paper list</h2><span id="paperCount">0 篇</span></div>
+        <div id="scopeSwitch" class="scope-switch"><button type="button" data-scope="current">当前节点</button><button type="button" data-scope="all">全部论文</button></div>
+        <label class="paper-search"><span aria-hidden="true">⌕</span><input id="paperSearch" type="search" placeholder="搜索论文…" aria-label="搜索论文"></label>
+        <div id="paperList" class="paper-list"></div>
+        <div class="paper-sidebar-actions"><button id="uploadPaper" type="button">＋ 上传 PDF</button></div>
+        <div class="import-panel"><div class="import-panel-head">自动整理 <span id="importCount"></span><button id="modelSettings" type="button">模型设置</button></div><div id="importList" class="import-list"></div></div>
+      </aside>
+      <main class="paper-main">
+        <div id="paperEmpty" class="paper-empty"><div class="empty-mark">P</div><h2>上传 PDF</h2><p>模型会自动读论文、入库并更新地图。</p></div>
+        <article id="paperDetail" class="paper-detail" hidden>
+          <header class="paper-detail-head"><div><p id="paperContext">论文库</p><h2 id="paperTitle"></h2></div><button id="unlinkPaper" type="button" hidden>从当前节点移除</button></header>
+          <div class="paper-tabs" role="tablist" aria-label="论文视图"><button type="button" data-tab="overview" role="tab">概览</button><button type="button" data-tab="reader" role="tab">阅读 PDF</button></div>
+          <section id="paperOverview" class="paper-overview" role="tabpanel"></section>
+          <section id="paperReader" class="paper-reader" role="tabpanel" hidden></section>
+        </article>
+      </main>
+    </div>
+  </div>
+  <input id="pdfFile" type="file" accept="application/pdf,.pdf" multiple hidden>
+  <dialog id="apiKeyDialog" class="api-key-dialog" aria-labelledby="apiKeyTitle"><form id="apiKeyForm"><h2 id="apiKeyTitle">模型设置</h2><p>API Key 只保存在当前本机服务进程中，重启服务后需重新输入。</p><p id="aiStatus" class="ai-status" role="status" aria-live="polite">正在读取配置…</p><label>服务商<select id="aiProvider"><option value="deepseek">DeepSeek · deepseek-flash</option><option value="openai">OpenAI · gpt-4.1</option></select></label><label>API Key<input id="apiKeyInput" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="500" required></label><div class="api-key-actions"><button id="cancelApiKey" type="button">取消</button><button id="saveApiKey" type="submit">保存</button></div></form></dialog>
+  <div id="paperToast" class="paper-toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./work.js"></script>
+</body>
+</html>
