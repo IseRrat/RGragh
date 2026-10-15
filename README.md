@@ -1,4 +1,4 @@
-# Inference Lineage
+# RGragh
 
 一张可编辑的大模型推理系统技术演进图与领域图，附个人论文库。代码和仓库中的数据快照采用 [MIT License](LICENSE)。
 

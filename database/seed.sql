@@ -1,4 +1,4 @@
--- Inference Lineage data snapshot. Import into a fresh MySQL 8 database.
+-- RGragh data snapshot. Import into a fresh MySQL 8 database.
 
 -- Contains the editable map and paper library metadata, not PDF binaries or credentials.
 

@@ -60,7 +60,7 @@ async function readJson(request) {
 const server = createServer(async (request, response) => {
   try {
     if (!authorized(request)) {
-      response.writeHead(401, { 'www-authenticate': 'Basic realm="Inference Lineage", charset="UTF-8"' });
+      response.writeHead(401, { 'www-authenticate': 'Basic realm="RGragh", charset="UTF-8"' });
       response.end('Authentication required');
       return;
     }
@@ -148,5 +148,5 @@ const server = createServer(async (request, response) => {
     json(response, status, { error: status === 500 ? '服务器暂时无法处理请求' : error.message });
   }
 });
-server.listen(port, host, () => console.log(`Inference Lineage: http://${host}:${port}`));
+server.listen(port, host, () => console.log(`RGragh: http://${host}:${port}`));
 for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => server.close(() => store.close().finally(() => process.exit(0))));

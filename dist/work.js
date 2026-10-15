@@ -81,7 +81,7 @@ async function performFlush() {
 function renderShell() {
   const currentNode = node();
   $('#workTitle').textContent = currentNode ? currentNode.title : '个人论文库';
-  document.title = `${currentNode ? currentNode.title : '论文库'} · Inference Lineage`;
+  document.title = `${currentNode ? currentNode.title : '论文库'} · RGragh`;
   $('[data-scope="current"]').hidden = !currentNode;
   if (!currentNode) scope = 'all';
   document.querySelectorAll('[data-scope]').forEach((button) => button.classList.toggle('active', button.dataset.scope === scope));

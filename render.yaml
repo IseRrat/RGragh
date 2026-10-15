@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: inference-lineage
+    name: rgragh
     runtime: node
     plan: free
     buildCommand: npm ci
